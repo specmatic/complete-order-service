@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "ProcessedOrder",
+  "namespace": "order",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "OrderStatus",
+        "symbols": ["PENDING", "PROCESSING", "PROCESSED", "CANCELLED"]
+      }
+    },
+    {
+        "name": "amount",
+        "type": "int"
+    }
+  ]
+}
