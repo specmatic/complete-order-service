@@ -67,15 +67,16 @@ docker compose up -d
 #### Run the contract tests
 Wait for the application to start and then run the following command to execute the contract tests using Specmatic:
 
-```bash
-docker run --network avro-app-network \
-       -v "$PWD/specmatic.yaml:/usr/src/app/specmatic.yaml" \
-       -v "$PWD/api-specs:/usr/src/app/api-specs" \
-       -v "$PWD/build:/usr/src/app/build" \
-       --rm specmatic/specmatic-kafka:1.0.1 test \
-       --broker=broker:9093 \
-       --schema-registry-url=http://schema-registry:8085 \
-       --schema-registry-kind=CONFLUENT
+- On Unix and Windows Powershell:
+
+```shell
+docker run --rm --network host -v "$(pwd):/usr/src/app" specmatic/enterprise test
+```
+
+- On Windows CMD Prompt:
+
+```shell
+docker run --rm --network host -v "%cd%:/usr/src/app" specmatic/enterprise test
 ```
 
 #### Stop the application
