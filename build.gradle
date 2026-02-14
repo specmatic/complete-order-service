@@ -1,9 +1,9 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '2.2.21'
-    id 'org.springframework.boot' version '3.5.8'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.10'
+    id 'org.springframework.boot' version '3.5.10'
     id 'io.spring.dependency-management' version '1.1.7'
-    id 'org.jetbrains.kotlin.plugin.spring' version '2.2.21'
+    id 'org.jetbrains.kotlin.plugin.spring' version '2.3.10'
     id 'jacoco'
     id("com.github.davidmc24.gradle.plugin.avro") version "1.9.1"
 }
@@ -24,13 +24,13 @@ repositories {
 
 dependencies {
     implementation ('org.springframework.boot:spring-boot-starter')
-    implementation ('org.springframework.kafka:spring-kafka:3.3.11') {
+    implementation ('org.springframework.kafka:spring-kafka:3.3.12') {
         exclude group: 'org.lz4', module: 'lz4-java'
     }
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.1'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.20.1'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.20'
-    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.21.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.21.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.21'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.21.0'
 
     implementation("io.confluent:kafka-avro-serializer:7.9.5") {
         exclude group: "org.lz4", module: "lz4-java"
@@ -40,7 +40,7 @@ dependencies {
         exclude group: "org.lz4", module: "lz4-java"
     }
 
-    testImplementation platform('org.junit:junit-bom:5.14.1')
+    testImplementation platform('org.junit:junit-bom:5.14.2')
     testImplementation("org.testcontainers:testcontainers:1.19.3")
     testImplementation("io.specmatic.enterprise:executable:$specmaticEnterpriseVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
